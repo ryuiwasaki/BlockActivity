@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol BlockActivityProtocol <NSObject>
-
-@end
-
 @interface UIActivity (Blocks)
 
 @property (assign,nonatomic)NSString *activityType;
