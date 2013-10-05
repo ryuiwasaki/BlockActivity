@@ -17,8 +17,8 @@
 // Property Method
 #pragma mark  - Property
 - (void((^)()))actionBlock{
-    id result = objc_getAssociatedObject(self, @"actionBlock");
-    return [result copy];
+    id block = objc_getAssociatedObject(self, @"actionBlock");
+    return [block copy];
 }
 
 - (void)setActionBlock:(void(^)())block
@@ -56,7 +56,7 @@
 // Action
 #pragma mark  - Action
 - (void)performActivity{
-    
+
     self.actionBlock();
     
 	[self activityDidFinish:YES];
@@ -80,7 +80,7 @@
         if (image) {
             activity.activityImage = image;
         } else {
-            activity.activityImage = createImageFromColor([UIColor blackColor],CGRectMake(0, 0, 1, 1));
+            activity.activityImage = [self imageFromColor:[UIColor blackColor] frame:CGRectMake(0, 0, 0.1f, 0.1f)];
         }
         
         activity.actionBlock = actionBlock;
@@ -90,14 +90,13 @@
     return activity;
 }
 
-UIImage *(^createImageFromColor)(UIColor *,CGRect) = ^(UIColor *color,CGRect frame)
-{
-    CGRect rect = frame;
++ (UIImage *)imageFromColor:(UIColor *)color frame:(CGRect)frame{
     
-    UIGraphicsBeginImageContext(rect.size);
+    UIGraphicsBeginImageContext(frame.size);
+    
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(contextRef, [color CGColor]);
-    CGContextFillRect(contextRef, rect);
+    CGContextFillRect(contextRef, frame);
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
