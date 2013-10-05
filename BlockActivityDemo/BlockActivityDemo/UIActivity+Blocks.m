@@ -77,7 +77,6 @@
         
         activity.activityType = type;
         activity.activityTitle = title;
-        
         if (image) {
             activity.activityImage = image;
         } else {
@@ -105,6 +104,5 @@ UIImage *(^createImageFromColor)(UIColor *,CGRect) = ^(UIColor *color,CGRect fra
     
     return image;
 };
-
 
 @end
