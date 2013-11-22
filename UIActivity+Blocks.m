@@ -1,7 +1,5 @@
 //
 //  UIActivity+Blocks.m
-//  NiceClipper
-//
 //  Created by Ryu Iwasaki @ja_gaimopotato on 2013/10/04.
 //  Copyright (c) 2013年 Ryu Iwasaki. All rights reserved.
 //
