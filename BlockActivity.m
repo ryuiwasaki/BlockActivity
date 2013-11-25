@@ -10,14 +10,15 @@
 
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems{
-    
+    /*
 	for (id activityItem in activityItems) {
         
         if ([activityItem isKindOfClass:[NSString class]]){
             return YES;
         }
     }
-    return NO;
+    */
+    return YES;
 }
 
 - (void)prepareWithActivityItems:(NSArray *)activityItems{
