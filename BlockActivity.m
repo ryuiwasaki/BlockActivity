@@ -11,6 +11,8 @@
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems{
     /*
+    Please be controlled, as in this example, if you want to control the type of the corresponding.
+    
 	for (id activityItem in activityItems) {
         
         if ([activityItem isKindOfClass:[NSString class]]){
